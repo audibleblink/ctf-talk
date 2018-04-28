@@ -1,0 +1,119 @@
+---
+type: chapter
+title: Capture The Flag
+subtitle: Learning Through Competition
+
+---
+type: text
+content: |
+
+  Anyone who stops learning is old, whether at twenty or eighty. 
+  Anyone who keeps learning stays young. 
+  The greatest thing in life is to keep your mind young.
+
+  -- Henry Ford
+
+---
+type: text
+title: Getting Started
+content: |
+
+  * Understand How You Learn
+    - Basics First?
+    - Practical Application First?
+    - Answer First?
+
+  * Learn Skills, Not 'Hacking'
+    - PicoCTF
+
+  * Regardless of Style, Understand your Tools
+    - http://overthewire.org/wargames/
+
+---
+type: text
+title: Deliberate Practice
+content: |
+
+  * Vulnhub.com
+    - Walkthrough Arent Cheating
+  * Find Ongoing CTFs
+    - HackTheBox
+    - CTF Archives
+
+---
+type: text
+title: Finding A Team
+content: |
+
+  * Going Solo
+  * Live Events
+  * Communities
+    - Meetup.com
+    - NetSecFocus Mattermost - chat.netsecfocus.com
+
+---
+type: text
+title: Learning Does Not Stop With the Flag
+content: |
+
+  * How many ways can you explain it?
+  * How many ways can you solve it?
+  * How would you solve this without tool X?
+  * How would I automate this?
+
+---
+type: text
+title: Show me!
+content: |
+
+  https://hackthebox.eu/invite
+
+---
+type: chapter
+title: Resources
+
+---
+type: text
+title: Resources - CTFs
+content: |
+  - https://csaw.engineering.nyu.edu/
+  - https://picoctf.com/
+  - https://microcorruption.com/login
+
+---
+type: text
+title: Resources - Online
+content: |
+  - https://vulnhub.com - Walkthroughs
+  - https://youtube.com/ippsec
+
+---
+type: text
+title: Resources - Additional Reading
+content: |
+
+  All-In-One
+    - https://trailofbits.github.io/ctf/
+
+  Going Deeper...
+
+  1 Reverse Engineering
+    - Practical Reverse Engineering
+    - The IDA Pro Book
+  2 Scripting
+    - Violent Python
+  3 Web
+    - Web Application Hackers Handbook
+  4 Crypto
+    - Applied Cryptography
+  5 Binary Exploitation
+    - Hacking: The Art of Exploitation
+
+---
+type: text
+title: Good Luck and Have Fun!
+content: |
+
+  * github/audibleblink/ctf-talk
+  * twitter/4lex
+

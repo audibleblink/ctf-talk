@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.2)
+    smart_colored (1.1.1)
+    termnote (2.0.1)
+      coderay (~> 1.0)
+      smart_colored (~> 1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  termnote
+
+BUNDLED WITH
+   1.16.1
