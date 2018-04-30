@@ -2,7 +2,7 @@
 
 ## Browser Slideshow
 
-`cd` and open `docs/index.html` or visit
+`cd` and open `docs/index.html` or visit https://alexflor.es/ctf-talk
 
 ## Terminal Slideshow
 Slides are in talk.yml
