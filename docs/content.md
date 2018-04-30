@@ -18,6 +18,22 @@ class: center, middle, inverse
 ---
 ## Different Learning Styles
 
+???
+## Basics
+Learning how DNS works
+Learning the HTTP Spec
+
+There's always time to come back and learn this.
+In fact, you'll need to if you want to 'LEVEL'
+
+## Practical Application First
+This one is me. I want to learn things that help
+me solve problems directly in front of me.
+
+## Answers First
+If I get absolutely stuck, I come here
+
+
 --
 ## Basics First?
 
@@ -31,13 +47,24 @@ class: center, middle, inverse
 class: center, middle
 ## Learn Skills, Not 'Hacking'
 
+???
+Pico CTF is a beginner's CTF platform by Carnegie Melon.
+
+A lot of the challenges are self contained lessons, including
+all the necessary resources to arrive at an answer
 --
 ### PicoCTF
 ---
 class: center, middle
 
 ## Regardless of Style, Understand your Tools
-  - http://overthewire.org/wargames/
+ http://overthewire.org/wargames/
+
+???
+- Make it easy for yourself to learn
+- Don't fight with your tools while learning
+- Read man Pages
+- Learn your shell
 
 ---
 class: center, middle, inverse
@@ -46,7 +73,13 @@ class: center, middle, inverse
 # Vulnhub.com
 
 --
-  - Walkthroughs Aren't Cheating
+  - Use the Walkthroughs
+  - Resist the feeling that it's 'cheating'
+
+???
+- Start with walkthroughs as intruction manuals
+- After 2-4, try alone
+- Creep scroll just enough to get unstuck
 
 --
 
@@ -67,6 +100,7 @@ class: center, middle, inverse
 * Communities
   - Meetup.com
   - NetSecFocus Mattermost - chat.netsecfocus.com
+  - https://zerodays.ie
 
 ---
 class: center, middle, inverse
@@ -83,6 +117,8 @@ class: center, middle, inverse
 
 --
 ## How would I automate this?
+???
+This one is my favorite
 ---
 class: center, middle, inverse
 # Show me!
@@ -91,36 +127,52 @@ class: center, middle, inverse
 ---
 class: center, inverse, middle
 # Resources
+???
+So many resources, but I'm only going to list a minimun so as to not overwhelm
 ---
+.left-column[
 # CTFs
-
+]
+.right-column[
 - https://csaw.engineering.nyu.edu/
 - https://picoctf.com/
 - https://microcorruption.com/login
 - https://ctftime.org
+]
 
 ---
+.left-column[
 # Online Resources
+]
+.right-column[
 - https://vulnhub.com - Walkthroughs
 - https://youtube.com/ippsec
+]
 
 ---
+.left-column[
 # Topics
-1. Reverse Engineering
+]
+.right-column[
+**Reverse Engineering**
   - Practical Reverse Engineering
   - The IDA Pro Book
-2. Scripting
+
+**Scripting**
   - Violent Python
-3. Web
+
+**Web**
   - Web Application Hackers Handbook
-4. Crypto
+
+**Crypto**
   - Applied Cryptography
-5. Binary Exploitation
+
+**Binary Exploitation**
   - Hacking: The Art of Exploitation
 
-6. All-In-One
+**All-In-One**
   - https://trailofbits.github.io/ctf/
-
+]
 ---
 class: center, inverse, middle
 # Good Luck and Have Fun!
