@@ -176,6 +176,6 @@ So many resources, but I'm only going to list a minimun so as to not overwhelm
 ---
 class: center, inverse, middle
 # Good Luck and Have Fun!
-## * github/audibleblink/ctf-talk
+## * https://alexflor.es/ctf-talk
 ## * twitter/4lex
 
