@@ -28,7 +28,7 @@ class: inverse
 ------
 
 
-## Test Case: IDOR on asciinema.org
+## Test Case: asciinema.org
 ]
 
 ???
@@ -86,21 +86,6 @@ grep passw dump.loot
 ```
 ]
 
---
----
-class: center, middle
-## Learn Skills, Not 'Hacking'
-
-???
-
-Math => Nuclear Warfare
-Pico CTF is a beginner's CTF platform by Carnegie Melon.
-
-A lot of the challenges are self contained lessons, including
-all the necessary resources to arrive at an answer
-
---
-### PicoCTF
 ---
 class: center, middle
 
