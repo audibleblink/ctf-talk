@@ -279,7 +279,6 @@ https://vulnhub.com
 https://youtube.com/ippsec
 
 ---
-class: middle
 .left-column[
 # Topics
 ]
