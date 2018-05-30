@@ -17,8 +17,11 @@ class: center, middle, inverse
 
 ---
 
+.left-column[
 ## What is it?
+]
 
+.right-column[
 A collection of challenges designed to test skill. Flags are trophies that prove you've completed a
 challenge.
 
@@ -29,10 +32,14 @@ challenge.
   * Exploitation
   * Steganography
   * OS / Network
+]
 
 ---
-## How do I _win_?
 
+.right-column[
+## How do I _win_?
+]
+.right-column[
 ```
 FLAG{d41d8cd98f00b204e9800998ecf8427e}
 CTF{y0ur3_s0_1337_u_f0unD_tHe-fl4g}
@@ -47,6 +54,7 @@ CTF{y0ur3_s0_1337_u_f0unD_tHe-fl4g}
 - Network Packets
 - Audio Files
 - Metadata
+]
 
 ---
 class: inverse
