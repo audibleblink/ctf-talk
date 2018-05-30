@@ -19,21 +19,18 @@ class: center, middle, inverse
 
 ## What is it?
 
---
-
 A collection of challenges designed to test skill. Flags are trophies that prove you've completed a
 challenge.
 
   * Reverse engineering
-  * Web applications
+  * Webapp Exploitation
   * Crypto
   * Forensics
   * Exploitation
   * Steganography
   * OS / Network
 
---
-
+---
 ## How do I _win_?
 
 ```
@@ -43,9 +40,12 @@ CTF{y0ur3_s0_1337_u_f0unD_tHe-fl4g}
 # or whatever the CTF rules say the flag format is
 ```
 
-- Files
+- Documents
+- Cracked Passwords
 - Logs
+- Database Tables
 - Network Packets
+- Audio Files
 - Metadata
 
 ---
@@ -61,8 +61,9 @@ class: inverse
 
 ------
 
+## Test Case: 
 
-## Test Case: asciinema.org
+##IDOR on asciinema.org
 ]
 
 ???
@@ -95,10 +96,10 @@ me solve problems directly in front of me.
 3| key='?AWSAccessKeyId=xxxx'
 4| for id in $(seq 10000 99999); do
 5|   uri="${base}${endpoint/_/$id}${key}"
-6|   curl -sL $uri >> dump.loot
+6|   curl -sL "${uri}" >> dump.loot
 7| done
 8| 
-9| grep passw dump.loot
+9| grep 'FLAG{' dump.loot
 ```
 ]
 
@@ -124,18 +125,19 @@ class: center, middle
 
 ## Regardless of Style, Understand your Tools
 
+???
+- Make it easy for yourself to learn
+- Don't fight with your tools while learning
+- Read man Pages
+- Learn your shell
+- Bootcamps and Ruby
+
 --
 a.k.a `man $tool` and `--help` all the things!
 
 --
 
  http://overthewire.org/wargames/
-
-???
-- Make it easy for yourself to learn
-- Don't fight with your tools while learning
-- Read man Pages
-- Learn your shell
 
 ---
 class: center, middle, inverse
@@ -252,6 +254,7 @@ invite code.
 
 * Manually inspect all non-standard globally define functions
 * Use BURPSuite to see calls that are made
+* Bruteforce the api endpoints
 
 --
 
@@ -259,6 +262,7 @@ invite code.
 
 --
 
+* Use jQuery to make the required calls
 * BURPsuite
 * curl
 * Python Requests
@@ -267,7 +271,7 @@ invite code.
 ---
 class: middle
 
-# AUTOPWN!!
+# AUTOMATE IT!!
 
 ```bash
 # API Endpoint Information Disclosure
@@ -276,6 +280,7 @@ class: middle
 3    | jq '.data.data' \ # pull data.data property from resulting json
 4    | tr -d '"' \       # delete all instances of the "
 5    | base64 -d         # decode base64
+
 
 #> In order to generate the invite code,
 #> make a POST request to /api/invite/generate%
