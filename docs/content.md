@@ -36,7 +36,7 @@ challenge.
 
 ---
 
-.right-column[
+.left-column[
 ## How do I _win_?
 ]
 .right-column[
