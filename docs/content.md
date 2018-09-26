@@ -7,7 +7,7 @@ class: center, middle, inverse
 layout: false
 class: center, middle
 
-## Sometimes you win, sometimes you learn
+# Sometimes you win, sometimes you learn
 .footnote[-- Abraham Lincoln, probably.]
 
 ---
@@ -18,35 +18,38 @@ class: center, middle, inverse
 ---
 
 .left-column[
-## What is it?
+# What is it?
 ]
 
 .right-column[
-A collection of challenges designed to test skill. Flags are trophies that prove you've completed a
-challenge.
-
-  * Reverse engineering
-  * Webapp Exploitation
-  * Crypto
-  * Forensics
-  * Exploitation
-  * Steganography
-  * OS / Network
+# A collection of challenges designed to test skill.
+.paragraph[
+- Reverse engineering
+- Webapp Exploitation  
+- Crypto  
+- Forensics  
+- Exploitation  
+- Steganography  
+- OS / Network  
+]
 ]
 
 ---
 
 .left-column[
-## How do I _win_?
+# How do I win?
 ]
-.right-column[
-```
-FLAG{d41d8cd98f00b204e9800998ecf8427e}
-CTF{y0ur3_s0_1337_u_f0unD_tHe-fl4g}
 
+## Flags are trophies that prove you've completed a challenge.
+.right-column[
+
+```
+FLAG{d41d8cd9e980fuo0998ecf8427e}
+CTF{y0ur3_s0_1337_u_f0unD_tHe_fl4g}
 # or whatever the CTF rules say the flag format is
 ```
 
+.paragraph[
 - Documents
 - Cracked Passwords
 - Logs
@@ -54,6 +57,9 @@ CTF{y0ur3_s0_1337_u_f0unD_tHe-fl4g}
 - Network Packets
 - Audio Files
 - Metadata
+]
+
+
 ]
 
 ---
@@ -128,10 +134,11 @@ Locate from where asciinema pulls the playback information and locate sensitive 
 * RFC 2616  -  Hypertext Transfer Protocol
 * [REST] Roy Fielding's dissertation "Architectural Styles and the Design of Network-based Software Architectures"
 ]
+
 ---
 class: center, middle
 
-## Regardless of Style, Understand your Tools
+# Regardless of Style, Understand your Tools
 
 ???
 - Make it easy for yourself to learn
@@ -174,13 +181,11 @@ class: center, middle, inverse
 # Social Learning
 
 --
-* Live Events
 
---
+* Live Events
 * Communities
   - Meetup.com
   - NetSecFocus Mattermost - chat.netsecfocus.com
-  - DC201 or other local DefCon groups
 
 ???
 - Start with walkthroughs as intruction manuals
@@ -193,20 +198,22 @@ class: center, middle, inverse
 ---
 
 .left-column[
-## Keep it Going!
+# Keep it Going!
 
 ]
 .right-column[
-### How many ways can you explain it?
+## How many ways can you explain it?
 ]
 --
 .right-column[
 - Write it up!
 ]
+
 --
 .right-column[
-### How many ways can you solve it?
+## How many ways can you solve it?
 ]
+
 --
 .right-column[
 - Are there other vectors?
@@ -214,14 +221,23 @@ class: center, middle, inverse
 ]
 
 --
-
 .right-column[
-### How would you solve this without tool X?
+## How would you solve this without tool X?
 ]
 
 --
 .right-column[
-### How would I automate this?
+* Limiting your tools forces you to reconceptualize your approach
+]
+
+--
+.right-column[
+## How would I automate this?
+]
+
+--
+.right-column[
+* Think Deterministically
 ]
 
 ???
@@ -244,25 +260,25 @@ class: center, middle, inverse
   https://hackthebox.eu/invite
 
 ---
+class: middle
 # Explain it
-After inspecting the network traffic, some obfuscated code was found.
 
+.paragraph[
+>After inspecting the network traffic, some obfuscated code was found.
 The code brought our attention to a function in the global scope, `makeInviteCode()`
-
-This function POSTs to endpoint `/how/to/generate/invite` which return some encoded JSON.
-
+This function POSTs to endpoint `/how/to/generate/invite` which returns some encoded JSON.
 Upon decoding, we're instructed to POST to another endpoint. The response data is the encoded
 invite code.
+]
 
 ---
-
 # How Else Can We Solve it?
 
 --
 
-* Manually inspect all non-standard globally define functions
-* Use BURPSuite to see calls that are made
-* Bruteforce the api endpoints
+#### -- Manually inspect all non-standard globally defined functions
+#### -- Use Burp Suite to see calls that are made
+#### -- Bruteforce the API endpoints
 
 --
 
@@ -270,11 +286,10 @@ invite code.
 
 --
 
-* Use jQuery to make the required calls
-* BURPsuite
-* curl
-* Python Requests
-* Ruby Net::HTTP
+#### -- jQuery from the DevTools Console
+#### -- curl
+#### -- Python Requests
+#### -- Ruby Net::HTTP
 
 ---
 class: middle
@@ -333,6 +348,7 @@ https://vulnhub.com
 https://youtube.com/ippsec
 
 ---
+class: middle
 .left-column[
 # Topics
 ]
