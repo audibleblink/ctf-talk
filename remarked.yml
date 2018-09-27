@@ -1,0 +1,22 @@
+# Set the title that should be rendered in the browser's title bar.
+title: Leveling Up With CTFs
+
+# Set the path to a local CSS file for remarked to serve.
+stylesheet: docs/main.css
+
+# Markdown file
+markdownFile: docs/content.md
+
+# RemarkJS allows overriding the default RemarkJS file.
+remarkJS: docs/remark.js
+templateFile: docs/template.html
+
+# The folder that should be served under /static. Default: none
+# staticFolder: ./docs
+#
+# If you want to use some of Go's template constructs inside the
+# markdown file, enable this:
+# markdownAsTemplate: false
+
+# leftActionDelimiter: "{{"
+# rightActionDelimiter: "}}"

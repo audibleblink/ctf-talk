@@ -101,7 +101,7 @@ class: center, middle, inverse
 
 class: inverse
 # Test Case  | __asciinema__
-<a href="https://asciinema.org/a/110084?t=20" ><img style="width: 100%; " src="https://asciinema.org/a/183006.png" /></a>
+<a href="https://asciinema.org/a/110084?t=20" target="_blank" ><img style="width: 100%; " src="https://asciinema.org/a/183006.png" /></a>
 
 ???
 Because the goal is to get better at offense in the real world,
